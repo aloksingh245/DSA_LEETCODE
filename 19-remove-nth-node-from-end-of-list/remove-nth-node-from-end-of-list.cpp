@@ -29,7 +29,6 @@ public:
             ptr = ptr->next;
         }
 
-        // remove nth node
         ptr->next = ptr->next->next;
 
         return head;
