@@ -8,7 +8,7 @@ public:
 
         while (ptr1 != NULL || ptr2 != NULL) {
             
-            // if l1 ends, attach l2
+    
             if (ptr1 == NULL) {
                 prev->next = ptr2;
                 ptr1 = ptr2;
@@ -29,7 +29,7 @@ public:
             ptr1 = ptr1->next;
         }
 
-        // leftover carry
+    
         if (carry > 0) {
             prev->next = new ListNode(carry);
         }
