@@ -11,6 +11,7 @@
  */
 class Solution {
 public:
+    int ans=0; 
     int height(TreeNode* q){
             if(q==NULL){
                 return 0;
@@ -18,23 +19,16 @@ public:
             int leftside=height(q->left);
             int rightside=height(q->right);
             int height=max(leftside,rightside)+1;
+            ans=max(ans,leftside+rightside);
             return height;
         }
 
 
     int diameterOfBinaryTree(TreeNode* root) {
+        height(root);
+        return ans;
         
-        if (root==NULL){
-            return 0;
-            
-
-        }
-        int leftdiameter=diameterOfBinaryTree(root->left);
-            int rightdiameter=diameterOfBinaryTree(root->right);
-            int currentdiameter=height(root->left)+height(root->right);
-            int diameter=max(currentdiameter,max(leftdiameter,rightdiameter));
-
-            return diameter;
+        
         
     }
 };
